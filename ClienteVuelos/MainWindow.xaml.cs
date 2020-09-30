@@ -55,7 +55,7 @@ namespace ClienteVuelos
             {
                 cv.Agregar(dv2);
                 btnAgregar.IsEnabled = false;
-                txtVuelo.IsEnabled = txtHora.IsEnabled = txtDestino.IsEnabled = false;
+                txtVuelo.IsEnabled = txtHora.IsEnabled = false;
                 txtDestino.Text = txtHora.Text = txtVuelo.Text = cmbEstados.Text = "";
             }
             catch (Exception ex)
