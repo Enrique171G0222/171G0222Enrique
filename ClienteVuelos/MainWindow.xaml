@@ -41,7 +41,7 @@
             <Label>Hora</Label>
             <TextBox Text="{Binding Hora}" IsEnabled="False" x:Name="txtHora"></TextBox>
             <Label>Destino</Label>
-            <TextBox Text="{Binding Destino}" IsEnabled="False" x:Name="txtDestino"></TextBox>
+            <TextBox Text="{Binding Destino}" x:Name="txtDestino"></TextBox>
             <Label>Vuelo</Label>
             <TextBox Text="{Binding Vuelo}" x:Name="txtVuelo" IsEnabled="False"></TextBox>
             <Label FontSize="23">Estado</Label>
