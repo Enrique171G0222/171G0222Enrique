@@ -1,0 +1,56 @@
+﻿<Window x:Class="ClienteVuelos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteVuelos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="590" Width="967.143">
+    <UniformGrid Columns="2" Margin="5" Background="Gray">
+        <StackPanel Grid.Row="0">
+            <TextBlock Background="Goldenrod" FontSize="25">Lista de vuelos</TextBlock>
+            <DataGrid Background="Gray" SelectedValue="{Binding Vuelo}" Margin="10" BorderThickness="1" 
+                      Height="400" Width="450" x:Name="lsvVuelos" FontSize="15" VerticalScrollBarVisibility="Visible"
+                      SelectionChanged="lsvVuelos_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Hora" Width=".25*" Binding="{Binding Hora}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Destino" Width=".25*"  Binding="{Binding Destino}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Vuelo" Width=".25*"  Binding="{Binding Vuelo}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Estado" Width=".25*"  Binding="{Binding Estado}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btnEditar" Click="btnEditar_Click" FontSize="23" HorizontalAlignment="Left" Width="275"
+                    Margin="50,5">Editar Vuelo</Button>
+            <Button x:Name="btnEliminar" Click="btnEliminar_Click" FontSize="23" HorizontalAlignment="Left" Width="275"
+                    Margin="50,5">Eliminar Vuelo</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <StackPanel.Resources>
+                <Style TargetType="TextBox">
+                    <Setter Property="FontSize" Value="23"></Setter>
+                    <Setter Property="Margin" Value="30,5"></Setter>
+                    <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                    <Setter Property="Width" Value="305"></Setter>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="23"></Setter>
+                    <Setter Property="Margin" Value="30,5"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Background="Goldenrod" FontSize="25">Modificar la lista de vuelos</TextBlock>
+            <Label>Hora</Label>
+            <TextBox Text="{Binding Hora}" IsEnabled="False" x:Name="txtHora"></TextBox>
+            <Label>Destino</Label>
+            <TextBox Text="{Binding Destino}" IsEnabled="False" x:Name="txtDestino"></TextBox>
+            <Label>Vuelo</Label>
+            <TextBox Text="{Binding Vuelo}" x:Name="txtVuelo" IsEnabled="False"></TextBox>
+            <Label FontSize="23">Estado</Label>
+            <ComboBox x:Name="cmbEstados" Background="Gray" SelectedValue="{Binding Estado}" Margin="30,5" HorizontalAlignment="Left" Width="275"
+                      FontSize="23"></ComboBox>
+            <Button x:Name="btnNuevo" FontSize="23" HorizontalAlignment="Left" Width="275" Click="btnNuevo_Click"
+                    Margin="50,47,0,0">Vuelo Nuevo</Button>
+            <Button x:Name="btnAgregar" Click="btnAgregar_Click" FontSize="23" HorizontalAlignment="Left" Width="275"
+                    Margin="50,9" IsEnabled="False">Agregar Vuelo</Button>
+        </StackPanel>
+    </UniformGrid>
+</Window>
